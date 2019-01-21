@@ -1,0 +1,303 @@
+.bg-wheel > .logo, .bg-wheel > .wheel
+{
+	width: 100%;
+	height: auto;
+}
+.bg-wheel > .wheel
+{
+	animation: rotate linear infinite;
+}
+.bg-wheel > .logo
+{
+	opacity: 0.8;
+}
+.bg-wheel > .wheel.reverse
+{
+	width: 100%;
+	animation: rotate linear infinite reverse;
+	height: auto;
+}
+
+.bg-wheel
+{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	transform: -webkit-translate(-50%,-50%);
+	width: 100%;
+}
+
+.bg-wheel.larger
+{
+	width: 105vw;
+}
+.bg-wheel.large
+{
+	max-width: 70vw;
+}
+.bg-wheel.medium
+{
+	max-width: 40vw;
+}
+.bg-wheel.small
+{
+	max-width: 24vw;
+}
+.bg-wheel.smaller
+{
+	max-width: 9vw;
+}
+
+.bg-wheel.large.tiny
+{
+	max-width: 28vw;
+}
+.bg-wheel.medium.tiny
+{
+	max-width: 15vw;
+}
+.bg-wheel.small.tiny
+{
+	max-width: 9vw;
+}
+.bg-wheel.smaller.tiny
+{
+	max-width: 6vw;
+}
+
+.bg-wheel
+{
+	transition: max-width 2s ease-in-out;
+}
+
+
+@media only screen and (max-width: 500px)
+{
+	.bg-wheel.larger
+	{
+		width: 115vh;
+	}
+	.bg-wheel.large
+	{
+		width: 80vh;
+	}
+	.bg-wheel.medium
+	{
+		max-width: 45vh;
+	}
+	.bg-wheel.small
+	{
+		max-width: 27vh;
+	}
+	.bg-wheel.smaller
+	{
+		max-width: 10vh;
+	}
+}
+
+@keyframes rotate
+{
+	from{transform: rotateZ(0deg);}
+	to{transform: rotateZ(360deg);}
+}
+
+@font-face
+{
+	font-family: GothamLight;
+	src: url(../assets/GothamLight.ttf);
+}
+
+@font-face
+{
+	font-family: Onyx;
+	src: url(../assets/onyx.ttf);
+}
+
+@font-face
+{
+	font-family: BebasNeue;
+	src: url(../assets/BebasNeue.otf);
+}
+
+
+.headers
+{
+	position: absolute;
+	top: 2vw;
+	text-align: center;
+	width: 100%;
+	user-select: none;
+}
+
+.college-header
+{
+	display: block;
+	font-family: GothamLight, sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+}
+.fest-header
+{
+	display: block;
+	font-family: Onyx, serif;
+	color: #fff;
+	font-size: 52pt;
+	transform: translateY(-12px);
+	text-transform: uppercase;
+}
+.version-header
+{
+	display: block;
+	font-family: Onyx, serif;
+	color: #d76c2f;
+	font-size: 26pt;
+	transform: translateY(-30px);
+	text-transform: uppercase;
+}
+
+.timer
+{
+	display: block;
+    font-family: Onyx, serif;
+    color: #fff;
+    font-size: 120pt;
+    width: 120%;
+    text-align: left;
+    position: absolute;
+    bottom: -10%;
+    user-select: none;
+}
+
+.timer::before
+{
+	display: block;
+	content: 'live in';
+	font-family: BebasNeue, sans-serif;
+	color: #fff;
+	font-size: 24pt;
+	text-align: left;
+	line-height: 0;
+	text-transform: uppercase;
+}
+
+.timer > div
+{
+	display: inline-block;
+	line-height: 1;
+}
+.timer > .days::after
+{
+	display: block;
+	content: 'DAYS';
+	font-family: BebasNeue, sans-serif;
+	font-size: 16pt;
+	text-align: center;
+	transform: translateY(-10px);
+}
+
+.timer > .hours::after
+{
+	display: block;
+	content: 'HOURS';
+	font-family: BebasNeue, sans-serif;
+	font-size: 16pt;
+	text-align: center;
+	transform: translateY(-10px);
+}
+
+.timer > .minutes::after
+{
+	display: block;
+	content: 'MINS';
+	font-family: BebasNeue, sans-serif;
+	font-size: 16pt;
+	text-align: center;
+	transform: translateY(-10px);
+}
+
+.timer > .seconds::after
+{
+	display: block;
+	content: 'SECS';
+	font-family: BebasNeue, sans-serif;
+	font-size: 16pt;
+	text-align: center;
+	transform: translateY(-10px);
+}
+
+.timer > .separator
+{
+	transform: translateY(-65px);
+	font-size: 84pt;
+	color: #b75e16;
+	animation: blinks 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes blinks
+{
+	from{opacity: 1}
+	to{opacity: 0}
+}
+
+.arrow-pointer
+{
+	display: block;
+    position: fixed;
+    right: 3%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.arrow-pointer.up
+{
+    top: 20px;
+    transform: rotateZ(225deg);
+}
+
+
+.arrow-pointer.down
+{
+    bottom: 20px;
+    transform: rotateZ(45deg);
+}
+
+.arrow-pointer > .text
+{
+	position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    top: 15%;
+    left: 15%;
+    -webkit-animation: hops 800ms infinite ease-in alternate-reverse;
+    animation: hops 1s infinite ease-out 1s alternate-reverse;
+}
+
+@keyframes hops{
+	50%{
+		transform: translate(0, 0);
+	}
+	100%{
+		transform: translate(-5px,-5px);
+	}
+}
+@-webkit-keyframes hops{
+	50%{
+		transform: translate(0, 0);
+	}
+	100%{
+		transform: translate(-5px,-5px);
+	}
+}
+
+/*
+mid orange - b75e16
+green -  003338
+outer orange - 663b00
+fade orange - 412600
+*/

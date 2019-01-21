@@ -1,0 +1,88 @@
+#loader-overlay
+{
+	background-color: #031414;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 999;
+}
+
+.sit-in
+{
+	z-index: 9999;
+}
+.fade-in
+{
+	opacity: 1;
+	transition: opacity 2s;
+}
+
+.fade-in.inactive
+{
+	opacity: 0;
+}
+
+/* LOADER TEXT */
+
+#SvgLoaderText > path {
+	fill: none;
+	stroke: rgb(152, 70, 33);
+	stroke-width: 5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-miterlimit: 10;
+	stroke-width: 2;
+}
+
+#SvgLoaderText {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: 50%;
+  transform: translateX(-50%);
+}
+
+#SvgLoaderText > text {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: draw 3s forwards;
+  -moz-animation: draw 3s forwards;
+  -o-animation: draw 3s forwards;
+  -ms-animation: draw 3s forwards;
+  animation: draw 3s forwards;
+  fill: #fff;
+}
+
+@keyframes draw {
+  80%
+  {
+  	stroke-dashoffset: 0;
+  }
+  100%
+  {
+  	fill: #000;
+  	stroke-dashoffset: 0;
+  }
+}
+
+@font-face
+{
+	src: url(assets/Rallifornia.ttf);
+	font-family: 'Rallifornia';
+}
+
+#textUI
+{
+	font-weight: normal;
+	font-size: 72pt;
+	letter-spacing: 3px;
+	font-family: 'Rallifornia', cursive;
+}
+
+#SvgShape
+{
+	stroke: #000;
+	stroke-width: 1;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Our Team</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+	<link rel="stylesheet" type="text/css" href="../styles/pages.css">
+	<link rel="stylesheet" type="text/css" href="../styles/menu.css">
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		body
+		{
+			background-color: #031414;
+			margin: 0;
+			padding: 0;
+		}
+
+		@font-face
+		{
+			font-family: GothamLight;
+			src: url(../assets/GothamLight.ttf);
+		}
+
+		@font-face
+		{
+			font-family: Onyx;
+			src: url(../assets/onyx.ttf);
+		}
+
+		@font-face
+		{
+			font-family: BebasNeue;
+			src: url(../assets/BebasNeue.otf);
+		}
+
+		section
+		{
+			display: block;
+			position: absolute;
+			top: calc(50px + 6vw);
+			width: 100%;
+			height: 100%;
+			white-space: nowrap;
+		}
+		.contact-box,.option-box
+		{
+			height: 300px;
+			display: inline-block;
+			overflow-y: hidden;
+			white-space: normal;
+		}
+		.contact-box
+		{
+			width: 80%;
+			scroll-behavior: smooth;
+		}
+		.option-box
+		{
+			width: 20%;
+		}
+		.contact-row
+		{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 100%;
+			padding: 10px;
+			white-space: nowrap;
+			justify-content: space-between;
+		}
+		.contact-frame
+		{
+			width: 300px;
+			height: 100%;
+			margin: 0 auto;
+			background-color: #fff;
+			white-space: normal;
+			padding: 5px;
+			background-image: url(../assets/border.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.contact-frame > img
+		{
+			max-width: 280px;
+			height: auto;
+		}
+
+		.contact-frame.inverse
+		{
+			background-color: #000;
+		}
+
+		.option-box > ul > li
+		{
+			list-style-type: none;
+			color: #fff;
+			font-size: 12pt;
+			font-family: GothamLight, sans-serif;
+			cursor: pointer;
+		}
+		.option-box > ul > li:hover
+		{
+			font-weight: bolder;
+		}
+
+		.category.active
+		{
+			font-weight: bolder;
+		}
+	</style>
+</head>
+<body>
+	<div class="logo">
+		<img src="../assets/logo.svg" alt="logo">
+	</div>
+
+	<div class="header">
+		Our Team
+	</div>
+
+	<section>
+		<div class="option-box">
+			<ul>
+				<li class="category active" data-target="category1contacts">Vice President, Gymkhana</li>
+				<li class="category" data-target="category2contacts">General Secretary</li>
+			</ul>
+		</div>
+		<div id="contact-box" class="contact-box">
+			<div id="category1contacts" class="contact-row">
+				<div class="contact-frame">
+				</div>
+				<div class="contact-frame">
+				</div>
+				<div class="contact-frame">
+				</div>
+			</div>
+			<div id="category2contacts" class="contact-row">
+				<div class="contact-frame">
+				</div>
+				<div class="contact-frame">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="menu">
+		<div class="menu-items-container">
+			<a href="sponsors.html"><div class="menu-item" data-order="7"><span>Sponsors</span></div></a>
+			<a href="events.html"><div class="menu-item" data-order="0"><span>Events</span></div></a>
+			<a href="experience.html"><div class="menu-item" data-order="1"><span>Experience</span></div></a>
+			<a href="../index.php"><div class="menu-item" data-order="3"><span>Home</span></div></a>
+			<a href="locate.html"><div class="menu-item" data-order="4"><span>Locate Us</span></div></a>
+			<a href="schedule.html"><div class="menu-item" data-order="5"><span>Schedule</span></div></a>
+			<a href="team.html"><div class="menu-item" data-order="2"><span>Our Team</span></div></a>
+			<a href="promo.html"><div class="menu-item" data-order="6"><span>Social &amp; Promotion</span></div></a>
+		</div>
+	</section>
+
+	<a href="#" id="menubtn" class="hamburger">
+        <div class="hamburger__bar"></div>
+	</a>
+	<script type="text/javascript" src="../scripts/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(".category").click(function (){
+			if(! $(this).hasClass("active"))
+			{
+				$("#contact-box").scrollTop($("#" + $(this).attr("data-target")).offset().top);
+				$(".category.active").removeClass("active");
+				$(this).addClass("active");
+			}
+		});
+	</script>
+	<script type="text/javascript" src="../scripts/menu.js"></script>
+</body>
+</html>
